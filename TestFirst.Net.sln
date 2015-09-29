@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFirst.Net", "TestFirst.Net\TestFirst.Net.csproj", "{EF8C3967-0099-41CF-AAE7-02555869C67A}"
 EndProject
@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F4BAE0
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFirst.Net.WPF", "TestFirst.Net.WPF\TestFirst.Net.WPF.csproj", "{F91F9C89-7350-4DD2-9F82-34E0E96C4B2F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -78,6 +80,10 @@ Global
 		{C37C7EC4-AD1D-42A4-99C6-79FB5E8C9D3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C37C7EC4-AD1D-42A4-99C6-79FB5E8C9D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C37C7EC4-AD1D-42A4-99C6-79FB5E8C9D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91F9C89-7350-4DD2-9F82-34E0E96C4B2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91F9C89-7350-4DD2-9F82-34E0E96C4B2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91F9C89-7350-4DD2-9F82-34E0E96C4B2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91F9C89-7350-4DD2-9F82-34E0E96C4B2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
