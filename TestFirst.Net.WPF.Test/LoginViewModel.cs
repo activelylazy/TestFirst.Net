@@ -7,7 +7,13 @@ using System.Windows.Input;
 
 namespace TestFirst.Net.WPF.Test
 {
-    internal class LoginViewModel
+    public interface ILoginViewModel
+    {
+        string Email { get; set; }
+        ICommand OKCommand { get; }
+    }
+
+    internal class LoginViewModel : ILoginViewModel
     {
         public string Email { get; set; }
         public ICommand OKCommand { get; private set; }

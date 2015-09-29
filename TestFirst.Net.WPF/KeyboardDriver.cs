@@ -1,7 +1,7 @@
 using System.Windows;
 using System.Windows.Input;
 
-namespace TestFist.Net.WPF
+namespace TestFirst.Net.WPF
 {
     static public class KeyboardDriver
     {
