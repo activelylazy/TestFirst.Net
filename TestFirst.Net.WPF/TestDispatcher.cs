@@ -18,6 +18,19 @@ namespace TestFirst.Net.WPF
 
         public Dispatcher Dispatcher { get; private set; }
 
+        public static void Run(Action action)
+        {
+            var dispatcher = new TestDispatcher();
+            try
+            {
+                dispatcher.Dispatcher.Invoke(action);
+            }
+            finally
+            {
+                dispatcher.Stop();
+            }
+        }
+
         public TestDispatcher()
         {
             m_interactive = TestInteractively.Enabled;

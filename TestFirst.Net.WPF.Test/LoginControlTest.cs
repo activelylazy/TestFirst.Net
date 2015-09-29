@@ -16,10 +16,7 @@ namespace TestFirst.Net.WPF.Test
         [Test]
         public void FieldsInitiallyEmptyButtonsDisabled()
         {
-            var dispatcher = new TestDispatcher();
-            try
-            {
-                dispatcher.Dispatcher.Invoke(new Action(() =>
+             TestDispatcher.Run(() =>
                 {
                     LoginDriver driver;
 
@@ -29,12 +26,7 @@ namespace TestFirst.Net.WPF.Test
                         .Then(driver.Email, Is(ATextBox.With().Text("")))
                         .Then(driver.Password, Is(APasswordBox.With().Password("")))
                     ;
-                }));
-            }
-            finally
-            {
-                dispatcher.Stop();
-            }
+                });
         }
     }
 
