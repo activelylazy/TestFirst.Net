@@ -15,7 +15,6 @@ namespace TestFirst.Net.WPF.Test
     public class LoginControlTest : AbstractNUnitScenarioTest
     {
         [Test]
-        [Ignore("wip")]
         public void FieldsInitiallyEmpty_OKButtonDisabled()
         {
              TestDispatcher.Run(() =>

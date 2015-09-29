@@ -22,6 +22,7 @@
         <TextBox Grid.Row="0" Grid.Column="1"
                  Margin="4"
                  Name="Email"
+                 Text="{Binding Email}"
                  />
         
         <TextBlock Grid.Row="1" Grid.Column="0"
@@ -45,6 +46,7 @@
                     Margin="4"
                     Width="80"
                     Name="OKButton"
+                    Command="{Binding OKCommand}"
                     />
         </StackPanel>
         
