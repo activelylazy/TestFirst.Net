@@ -21,13 +21,26 @@ namespace TestFirst.Net.WPF
         public static void Run(Action action)
         {
             var dispatcher = new TestDispatcher();
+            Exception caughtException = null;
             try
             {
-                dispatcher.Dispatcher.Invoke(action);
+                dispatcher.Dispatcher.Invoke(new Action(() =>
+                    {
+                        try
+                        {
+                            action();
+                        }
+                        catch (Exception ex)
+                        {
+                            caughtException = ex;
+                        }
+                    }));
             }
             finally
             {
                 dispatcher.Stop();
+                if (caughtException != null)
+                    throw caughtException;
             }
         }
 

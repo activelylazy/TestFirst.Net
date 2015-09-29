@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="ControlContainer.cs" />
     <Compile Include="KeyboardDriver.cs" />
+    <Compile Include="Matcher\AButton.cs" />
     <Compile Include="Matcher\APasswordBox.cs" />
     <Compile Include="Matcher\ATextBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

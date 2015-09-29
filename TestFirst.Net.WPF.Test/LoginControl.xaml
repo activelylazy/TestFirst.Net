@@ -44,6 +44,7 @@
                     IsDefault="True"
                     Margin="4"
                     Width="80"
+                    Name="OKButton"
                     />
         </StackPanel>
         
