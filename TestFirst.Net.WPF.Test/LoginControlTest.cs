@@ -14,50 +14,46 @@ using TestFirst.Net.Matcher;
 namespace TestFirst.Net.WPF.Test
 {
     [TestFixture]
-    public class LoginControlTest : AbstractNUnitMoqScenarioTest
+    public class LoginControlTest : AbstractWPFScenarioTest
     {
         [Test]
+        [RequiresSTA]
         public void FieldsInitiallyEmpty_OKButtonDisabled()
         {
-             TestDispatcher.Run(() =>
-                {
-                    LoginDriver driver;
+            LoginDriver driver;
 
-                    Scenario()
-                        .Given(driver = new LoginDriver(new LoginViewModel()))
+            Scenario()
+                .Given(driver = new LoginDriver(new LoginViewModel()))
 
-                        .Then(driver.Email, Is(ATextBox.With().Text("")))
-                        .Then(driver.Password, Is(APasswordBox.With().Password("")))
-                        .Then(driver.OKButton, Is(AButton.With().IsEnabled(false)))
-                    ;
-                });
+                .Then(driver.Email, Is(ATextBox.With().Text("")))
+                .Then(driver.Password, Is(APasswordBox.With().Password("")))
+                .Then(driver.OKButton, Is(AButton.With().IsEnabled(false)))
+            ;
         }
 
         [Test]
+        [RequiresSTA]
         public void UserCanEnterEmail()
         {
-            TestDispatcher.Run(() =>
-            {
-                LoginDriver driver;
-                ILoginViewModel viewModel;
-                ICommand okCommand;
+            LoginDriver driver;
+            ILoginViewModel viewModel;
+            ICommand okCommand;
 
-                Scenario()
-                    .Given(okCommand = AMock<ICommand>()
-                        .WhereMethod(c => c.CanExecute(null)).Returns(false)
-                        .Instance)
-                    .Given(viewModel = AMock<ILoginViewModel>()
-                        .WhereGet(v => v.Email).Returns("")
-                        .WhereSet(v => v.Email = "fred@example.com")
-                        .WhereGet(v => v.OKCommand).Returns(okCommand)
-                        .Instance)
-                    .Given(driver = new LoginDriver(viewModel))
+            Scenario()
+                .Given(okCommand = AMock<ICommand>()
+                    .WhereMethod(c => c.CanExecute(null)).Returns(false)
+                    .Instance)
+                .Given(viewModel = AMock<ILoginViewModel>()
+                    .WhereGet(v => v.Email).Returns("")
+                    .WhereSet(v => v.Email = "fred@example.com")
+                    .WhereGet(v => v.OKCommand).Returns(okCommand)
+                    .Instance)
+                .Given(driver = new LoginDriver(viewModel))
 
-                    .When(() => driver.SetEmail("fred@example.com"))
+                .When(() => driver.SetEmail("fred@example.com"))
 
-                    .Then(ExpectNoMocksFailed())
-                ;
-            });
+                .Then(ExpectNoMocksFailed())
+            ;
         }
     }
 
