@@ -9,7 +9,7 @@ namespace TestFirst.Net.Extensions.Moq
     /// Wraps a <see cref="Mock{T}"/> and provides a fluent interface over it. Recommend to use 
     /// the <see cref="AbstractNUnitMoqScenarioTest.AMock{T}"/> to create an instance of this. Alternatively
     /// create your own but be sure to register this mock with the <see cref="Scenario"/> via injection to ensure
-    /// the wrapped mocks <see cref="m_mock.VerifyAll"/> is called at scenario completion. Feel free to implement your
+    /// the wrapped mocks <see cref="Mock{T}.VerifyAll"/> is called at scenario completion. Feel free to implement your
     /// own mechanism but then you maintain it
     /// </summary>
     /// <typeparam name="T">the type of the object we are mocking</typeparam>
