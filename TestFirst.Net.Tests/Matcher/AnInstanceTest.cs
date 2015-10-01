@@ -45,22 +45,22 @@ namespace TestFirst.Net.Test.Matcher
         }
 
 
+#pragma warning disable 659
         internal class SettableEquals
         {
             private bool EqualsReturns { get; set; }
 
-            #pragma warning disable 659
             public override bool Equals(object obj)
             {
                 return EqualsReturns;
             }
-            #pragma warning restore 659
 
             internal static SettableEquals Returns(bool b)
             {
                 return new SettableEquals {EqualsReturns = b};
             }
         }
+#pragma warning restore 659
 
         internal class MyType
         {

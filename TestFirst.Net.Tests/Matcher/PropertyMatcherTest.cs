@@ -215,13 +215,10 @@ namespace TestFirst.Net.Test.Matcher
 
         internal class AnEmployee : AHuman<AnEmployee,Employee>
         {
-            private static readonly Employee PropertyNames = null;
-
             public static AnEmployee With()
             {
                 return new AnEmployee();
             }
-
         }
 
         internal class AnEmployeeNotSubHumanMather : PropertyMatcher<Employee>
