@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading;
 using System.Windows.Threading;
-using TestFirst.Net;
 
 namespace TestFirst.Net.WPF
 {
     public class TestDispatcher
     {
         private readonly IList<string> m_errors = new List<string>();
-
-        public Dispatcher Dispatcher { get; private set; }
+        private readonly Dispatcher m_dispatcher;
 
         public TestDispatcher()
         {
-            Dispatcher = Dispatcher.CurrentDispatcher;
+            m_dispatcher = Dispatcher.CurrentDispatcher;
         }
 
         public void Stop()
         {
             if (!TestInteractively.Enabled)
-                Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(Stop_UI));
+                m_dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(Stop_UI));
             else
-                Dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() => {/* wait */}));
+                m_dispatcher.BeginInvoke(DispatcherPriority.ContextIdle, new Action(() => {/* wait */}));
         }
 
         public void CheckForErrors()
@@ -49,7 +46,7 @@ namespace TestFirst.Net.WPF
 
         private void Stop_UI()
         {
-            Dispatcher.InvokeShutdown();
+            m_dispatcher.InvokeShutdown();
         }
     }
 
