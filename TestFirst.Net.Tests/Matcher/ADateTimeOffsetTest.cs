@@ -92,7 +92,7 @@ namespace TestFirst.Net.Test.Matcher
         [Test]
         public void BeforeTest()
         {
-            var dateTime = new DateTime(1984,1,1);
+            var dateTime = new DateTimeOffset(1984,1,1,0,0,0,TimeSpan.Zero);
 
             var matcher = ADateTimeOffset.Before(dateTime);
 
@@ -107,7 +107,7 @@ namespace TestFirst.Net.Test.Matcher
         [Test]
         public void AfterTest()
         {
-            var dateTime = new DateTime(1984,1,1);
+            var dateTime = new DateTimeOffset(1984, 1, 1, 0, 0, 0, TimeSpan.Zero);
 
             var matcher = ADateTimeOffset.After(dateTime);
 
